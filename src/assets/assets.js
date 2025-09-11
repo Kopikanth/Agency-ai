@@ -32,12 +32,12 @@ import moon_icon from './moon_icon.svg'
 
 
 export const company_logos = [
-  microsoft_logo,
-  zoom_logo,
-  rakuten_logo,
   coinbase_logo,
-  airbnb_logo,
   google_logo,
+  rakuten_logo,
+  microsoft_logo,
+  airbnb_logo,
+  zoom_logo
 ]
 
 const assets = {
