@@ -3,12 +3,12 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import TrustedBy from "./components/TrustedBy";
 import Services from "./components/Services";
+import OurWork from "./components/OurWork";
+import Team from "./components/Team";
+import ContactUs from "./components/ContactUs";
 
 const App = () => {
 
-  // const [theme, setTheme] = useState(() => {
-  //   return localStorage.getItem("theme") || "light";
-  // });
   const [theme, setTheme] = useState(localStorage.getItem("theme") ? localStorage.getItem("theme") : "light");
 
   return (
@@ -17,6 +17,9 @@ const App = () => {
       <Hero/>
       <TrustedBy/>
       <Services/>
+      <OurWork/>
+      <Team/>
+      <ContactUs/>
     </div>
   );
 };
