@@ -18,27 +18,22 @@ const App = () => {
   const mouse = useRef({ x: 0, y: 0 });
   const position = useRef({ x: 0, y: 0 });
 
-  // const moveCursor = (event) => {
-  //   // console.log(event.clientX);
-  //   ringRef.current.style.top = event.clientY + 'px';
-  //   ringRef.current.style.left = event.clientX + 'px';
-  //   dotRef.current.style.top = event.clientY + 'px';
-  //   dotRef.current.style.left = event.clientX + 'px';
-  // }
   useEffect(() => {
     const handleMouseMove = (e) => {
-      mouse.current.x = e.clientX;
-      mouse.current.y = e.clientY;
+      if (dotRef.current && ringRef.current) {
+        dotRef.current.style.display = 'block';
+        ringRef.current.style.display = 'block';
+        mouse.current.x = e.clientX;
+        mouse.current.y = e.clientY;
+        position.current.x = e.clientX;
+        position.current.y = e.clientY;
+      }
     }
 
     const handleMouseEnter = (e) => {
       if (dotRef.current && ringRef.current) {
         dotRef.current.style.display = 'block';
         ringRef.current.style.display = 'block';
-        // dotRef.current.style.top = `${e.clientY}px`;
-        // dotRef.current.style.left = `${e.clientX}px`;
-        // ringRef.current.style.top = `${e.clientY}px`;
-        // ringRef.current.style.left = `${e.clientX}px`;
         mouse.current.x = e.clientX;
         mouse.current.y = e.clientY;
         position.current.x = e.clientX;
@@ -90,7 +85,7 @@ const App = () => {
       <Footer theme={theme} />
 
       {/* custom cursor ring */}
-      <div ref={ringRef} className={"fixed hidden top-0 left-0 h-10 w-10 rounded-full border border-primary pointer-events-none z-[9999]"} />
+      <div ref={ringRef} className="fixed hidden top-0 left-0 h-10 w-10 rounded-full border border-primary pointer-events-none z-[9999]" style={{ transition: 'transform 0.1s ease-out' }} />
 
       {/* custom cursor dot */}
       <div ref={dotRef} className="fixed hidden top-0 left-0 h-3 w-3 rounded-full bg-primary pointer-events-none z-[9999]" />

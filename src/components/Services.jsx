@@ -1,6 +1,7 @@
 import assets from "../assets/assets";
 import ServiceCard from "./ServiceCard";
 import Title from "./Title";
+import { motion } from "motion/react";
 
 const Services = () => {
 
@@ -34,7 +35,7 @@ const Services = () => {
             <div className="flex flex-col md:grid grid-cols-2">
                 {
                     servicesData.map((service, index) => (
-                        <ServiceCard key={index} service={service} />
+                        <ServiceCard key={index} index={index} service={service} />
                     ))
                 }
             </div>
