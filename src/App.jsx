@@ -8,6 +8,7 @@ import Team from "./components/Team";
 import ContactUs from "./components/ContactUs";
 import { Toaster } from "react-hot-toast";
 import Footer from "./components/Footer";
+import { Analytics } from "@vercel/analytics/next";
 
 const App = () => {
 
@@ -83,6 +84,7 @@ const App = () => {
       <Team />
       <ContactUs />
       <Footer theme={theme} />
+      <Analytics/>
 
       {/* custom cursor ring */}
       <div ref={ringRef} className="fixed hidden top-0 left-0 h-10 w-10 rounded-full border border-primary pointer-events-none z-[9999]" style={{ transition: 'transform 0.1s ease-out' }} />
